@@ -21,6 +21,10 @@ Plugin 'vim-latex/vim-latex'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'rakr/vim-one'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'altercation/vim-colors-solarized'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -73,11 +77,18 @@ if (empty($TMUX))
 endif
 
 " Option A: One Dark
-"set background=dark " for the dark version
-"colorscheme one
+"
+if has("gui_running")
+  set background=dark " for the dark version
+  colorscheme one
+else
+  " Option B: Base 16
+  colorscheme base16-flat
+endif
 
-" Option B: Base 16
- colorscheme base16-flat
+" Option C: solarized
+" set background=dark
+" colorscheme solarized
 
  " - Completion - "
 " Set YCM config for C based languages
