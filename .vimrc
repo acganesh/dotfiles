@@ -25,6 +25,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
+Plugin 'google/yapf', { 'rtp': 'plugins/vim' }
 
 
 " All of your Plugins must be added before the following line
@@ -132,6 +133,10 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = '--ignore=E501,E302,E226,E702,E265,W'
+
+" - YAPF Keybindings - "
+map <C-Y> :call yapf#YAPF()<cr>
+imap <C-Y> <c-o>:call yapf#YAPF()<cr>
 
 " Toggle Syntastic between active/passive modes
 " :command Sd SyntasticToggleMode
