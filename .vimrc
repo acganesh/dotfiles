@@ -158,6 +158,16 @@ nmap <leader>p :r! cat /tmp/vitmp<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+" - CtrlP -"
+" CtrlP performance optimizations.
+" https://stackoverflow.com/a/22784889
+" Persitent cache.
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+" Use ag (silver searcher) APIs
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
 " - Highlighting HTML with Django awareness -
 au BufNewFile,BufRead *.html set filetype=htmldjango
 
