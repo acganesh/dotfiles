@@ -24,6 +24,7 @@ Plugin 'rakr/vim-one'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'morhetz/gruvbox'
 
 
 " All of your Plugins must be added before the following line
@@ -76,17 +77,27 @@ if (empty($TMUX))
   endif
 endif
 
-" Option A: One Dark
-"
-if has("gui_running")
-  set background=dark " for the dark version
-  colorscheme one
-else
-  " Option B: Base 16
-  colorscheme base16-flat
-endif
+" Needed to enable true-colors in tmux.
+set termguicolors
 
-" Option C: solarized
+" Escape sequences to get colors working.
+" https://github.com/vim/vim/issues/993
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" Option A: One Dark
+set background=dark " for the dark version
+colorscheme one
+let g:airline_theme='one' " Set airline to one.
+
+" Option B: gruvbox
+"colorscheme gruvbox
+"let g:gruvbox_italic=1
+
+" Option C: Base 16
+" colorscheme base16-flat
+
+" Option D: solarized
 " set background=dark
 " colorscheme solarized
 
