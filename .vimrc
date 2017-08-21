@@ -14,7 +14,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 " Plugin 'kevinw/pyflakes-vim'
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'chriskempson/base16-vim'
 Plugin 'vim-latex/vim-latex'
@@ -26,6 +25,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 Plugin 'google/yapf', { 'rtp': 'plugins/vim' }
+Plugin 'christoomey/vim-tmux-navigator'
 
 
 " All of your Plugins must be added before the following line
